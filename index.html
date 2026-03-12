@@ -221,7 +221,69 @@
           <p class="italic mb-4">"Incredible stay! Katie was an amazing host, so responsive to any and all questions we had regarding our stay. Recommend anyone to book with Katie for a relaxing getaway"</p>
           <p class="font-semibold">— Nick, Jan 2026</p>
       </div>
-      
+      <div class="mt-12 text-center">
+  <h3 class="text-3xl font-bold mb-6 text-emerald-800">Leave a Review</h3>
+  <p class="text-lg mb-8 text-gray-600">Enjoyed your stay? We'd love to hear your thoughts!</p>
+
+  <form action="https://formspree.io/f/xwvrozzd" method="POST" class="max-w-lg mx-auto space-y-6">
+    <!-- Hidden fields (optional but helpful) -->
+    <input type="hidden" name="_subject" value="New Review - Itty Bitty Acres">
+    <input type="hidden" name="_next" value="https://aidos123.github.io/itty-bitty-acres/thanks.html"> <!-- optional thank-you page -->
+
+    <!-- Star rating -->
+    <fieldset class="rating flex justify-center gap-1 text-5xl text-gray-300">
+      <input type="radio" id="star5" name="rating" value="5" class="hidden" required />
+      <label for="star5" title="5 stars" class="cursor-pointer hover:text-yellow-400 transition">★</label>
+
+      <input type="radio" id="star4" name="rating" value="4" class="hidden" />
+      <label for="star4" title="4 stars" class="cursor-pointer hover:text-yellow-400 transition">★</label>
+
+      <input type="radio" id="star3" name="rating" value="3" class="hidden" />
+      <label for="star3" title="3 stars" class="cursor-pointer hover:text-yellow-400 transition">★</label>
+
+      <input type="radio" id="star2" name="rating" value="2" class="hidden" />
+      <label for="star2" title="2 stars" class="cursor-pointer hover:text-yellow-400 transition">★</label>
+
+      <input type="radio" id="star1" name="rating" value="1" class="hidden" />
+      <label for="star1" title="1 star" class="cursor-pointer hover:text-yellow-400 transition">★</label>
+    </fieldset>
+
+    <!-- Fill selected stars (CSS magic) -->
+    <style>
+      /* Highlight stars on hover and selection */
+      input[type="radio"][name="rating"]:checked ~ label,
+      label:hover,
+      label:hover ~ label {
+        color: #fbbf24; /* yellow-400 */
+      }
+      label {
+        transition: color 0.2s;
+      }
+      /* Reverse order so highest star is leftmost */
+      #star5 ~ label { order: 1; }
+      #star4 ~ label { order: 2; }
+      #star3 ~ label { order: 3; }
+      #star2 ~ label { order: 4; }
+      #star1 ~ label { order: 5; }
+    </style>
+
+    <!-- Name (optional) -->
+    <input type="text" name="name" placeholder="Your Name (optional)" class="w-full px-6 py-4 border border-gray-300 rounded-2xl focus:outline-none focus:border-emerald-500">
+
+    <!-- Comment -->
+    <textarea name="comment" rows="5" placeholder="Tell us about your stay..." required class="w-full px-6 py-4 border border-gray-300 rounded-2xl focus:outline-none focus:border-emerald-500"></textarea>
+
+    <!-- Email (Formspree requires this for spam protection/replies) -->
+    <input type="email" name="_replyto" placeholder="Your email (required)" required class="w-full px-6 py-4 border border-gray-300 rounded-2xl focus:outline-none focus:border-emerald-500">
+
+    <!-- Submit button -->
+    <button type="submit" class="w-full bg-emerald-700 hover:bg-emerald-800 text-white py-4 rounded-2xl text-xl font-semibold transition">
+      Submit Your Review
+    </button>
+  </form>
+
+  <p class="mt-6 text-sm text-gray-500">Your review goes straight to us. We'll review it and may publish 5-star ones (with your name if provided)!</p>
+</div>
     </div>
   </section>
 
@@ -268,6 +330,7 @@
 </body>
 
 </html>
+
 
 
 
